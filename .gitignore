@@ -1,0 +1,6 @@
+NodeRTalk/node_modules/
+NodeRTalk/.idea/
+NodeRTalk/public/vendor/
+NodeRTalk/server/**/*.html
+NodeRTalk/public/**/*.html
+NodeRTalk/public/**/*.css

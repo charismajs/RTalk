@@ -1,0 +1,33 @@
+{
+  "name": "RTalk",
+  "version": "0.5.0",
+  "authors": [
+    "LuckyJS <charismajs@gmail.com>"
+  ],
+  "description": "Anonymous Bulletin for UBcare R&D Part's members",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "anonymous",
+    "bulletin",
+    "UBcare"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "angular": "~1.2.23",
+    "angular-resource": "~1.2.23",
+    "angular-route": "~1.2.23",
+    "toastr": "~2.0.3",
+    "angular-timer": "~1.1.6"
+  }
+}

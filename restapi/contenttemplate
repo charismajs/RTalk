@@ -1,0 +1,5 @@
+<div style="padding:15px;margin:20px;">
+    <div class="font-size:large"><label>{0}</label></div>
+    <span class="font-size:small"> {1}, like {2}</span>
+</div>
+

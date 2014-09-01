@@ -1,0 +1,46 @@
+//
+   Created by LuckyJS on 2014. 8. 28..
+.container
+  .panel.panel-primary
+    .panel-heading
+      h1.panel-title RTalk
+        small.panel-sub-title   anonymous bulletin
+    .panel-body
+      //timer(countdown="10", interval="1000", finish-callback="getListOnTime()") {{seconds}}초
+      //timer(interval="1000") {{countdown}}
+
+      .panel
+        .input-group
+          input.form-control(type='text', ng-model='msg', placeholder='하고 싶은 말을 자유롭게 작성해주세요~^^')
+          span.input-group-btn
+            button.btn.btn-default(type='button', ng-click='saveContents()') 전송
+
+      .panel
+        .row
+          .col-sm-6.col-md-4(ng-repeat='top in contentsList.topn')
+            .thumbnail
+              .caption
+                table.w-100
+                  tr
+                    td
+                      span {{top.t}}
+                      br
+                      span.font-7 {{top.wt}}
+                    td.w-10
+                      span.badge {{top.l}}
+                    td.w-10
+                      span.glyphicon.glyphicon-thumbs-up.btn-lg.clickable(ng-click='likeContents(top)')
+
+      .panel.panel-info
+        table.table
+          tr(ng-repeat='contents in contentsList.list')
+            td
+              span {{contents.t}}
+              br
+              span.font-7 {{contents.wt}}
+            td.w-5.v-m
+              span.badge.pull-right {{contents.l}}
+            td.w-5.v-m
+              span.glyphicon.glyphicon-thumbs-up.btn-lg.clickable(ng-click='likeContents(contents)')
+
+
