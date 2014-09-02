@@ -6,7 +6,7 @@ module.exports = function(app, config) {
     return stylus(str).set('filename', path);
   }
 
-  if ('development' == config.mode) {
+//  if ('development' == config.mode) {
 
     app.set('views', config.rootPath + '/server/views');
     app.set('view engine', 'jade');
@@ -17,5 +17,5 @@ module.exports = function(app, config) {
       }
     ));
     app.use(express.static(config.rootPath + '/public'));
-  }
+//  }
 };
