@@ -20,7 +20,7 @@ module.exports = function(express, config) {
   router.route('/like/:key')
     .get(function(req, res) {
       client.get(baseUrl + '/like/' + req.params.key, function(data, response) {
-        console.log('data : ', data);
+//        console.log('data : ', data);
 //        console.log('response : ', response);
 
         res.status(response.statusCode).send(data);
@@ -29,10 +29,10 @@ module.exports = function(express, config) {
 
   router.route('/list/:topn/:listn')
     .get(function(req, res) {
-      console.log('topN : ' + req.params.topn +', listN : ' + req.params.listn);
+//      console.log('topN : ' + req.params.topn +', listN : ' + req.params.listn);
 
       client.get(baseUrl + '/list/' + req.params.topn + '/' + req.params.listn, function(data, response) {
-        console.log('data : ', data);
+//        console.log('data : ', data);
 //        console.log('response : ', response);
 
         res.status(response.statusCode).send(data);
