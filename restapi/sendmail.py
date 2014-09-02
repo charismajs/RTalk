@@ -1,9 +1,9 @@
 import smtplib
-import redis
 from rtalk import RTalk, RTalkList
 from datetime import datetime, date, time
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from redisDatasource import RedisDataSource
 
 DIR="/home/RTalk/restapi/"
 
@@ -13,7 +13,7 @@ FROM = "ubcarernd@gmail.com"
 SUBJECT = "R&D Talk TOP 3"
 TOPCOUNT = 3
 
-rd = redis.StrictRedis(host='localhost',port=6379,db=0)
+rd = RedisDataSource() 
 
 def sendmail(receivers, topTalks):
 	try:
@@ -44,12 +44,10 @@ def sendmail(receivers, topTalks):
 
 def gettalk():
 	try:
-		keys = rd.keys("*")
+		talks = rd.getTalks()
 
-		if len(keys) == 0 :
+		if len(talks) == 0:
 			return jsonify({'result':'error','reason':'no keys'})
-
-		talks = rd.mget(keys)
 
 		rtalks = []
 
@@ -114,6 +112,6 @@ if len(topTalks) > 0 and len(receivers) > 0:
 
 	for talk in topTalks:
 		print "Delete Talk : " + talk.key
-		#rd.delete(talk.key)	
+		#rd.deleteTalk(talk.key)	
 else:
 	writeLog("Send Mail : None")

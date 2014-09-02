@@ -35,3 +35,7 @@ class RedisDataSource:
 			self.redis.getset(key, talk)
 			self.redis.expire(key, expire)
 		return ast.literal_eval(self.redis.get(key))
+
+	def deleteTalk(self, key):
+		if self.redis.exists(key) == True:
+			self.redis.delete(key)
