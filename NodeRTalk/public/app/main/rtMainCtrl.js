@@ -25,7 +25,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, $interval, rtMod
   // save a new contents
   $scope.saveContents = function() {
     rtModelApi.write($scope.msg, function(newContents) {
-      getContentsList(topN, listN);
+      getContentsList();
       $scope.msg = '';
       rtNotifier.notify('Saved it!!');
     });
@@ -34,7 +34,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, $interval, rtMod
   // thumbs up
   $scope.likeContents = function(contents) {
     rtModelApi.like(contents, function(result) {
-      getContentsList(topN, listN);
+      getContentsList();
       rtNotifier.notify('Like it!!');
     });
   };
