@@ -1,7 +1,7 @@
 /**
  * Created by LuckyJS on 2014. 8. 27..
  */
-angular.module('app', ['ngResource', 'ngRoute']);
+angular.module('app', ['ngResource', 'ngRoute', 'timer']);
 
 angular.module('app').config(function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);

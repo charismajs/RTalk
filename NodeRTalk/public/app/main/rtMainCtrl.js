@@ -1,26 +1,23 @@
 /**
  * Created by LuckyJS on 2014. 8. 28..
  */
-angular.module('app').controller('rtMainCtrl', function($scope, $interval, rtModelApi, rtNotifier) {
+angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNotifier) {
   var defaultTopN = '3', defaultListN = '0';
   $scope.contentsList = '';
-  $scope.timeCount = 10;
+  var updatePeriod = 10;
 
   // get a contents List
   var getContentsList = function(topN, listN) {
-//    console.log('topN in Angularjs : ', topN);
-//    console.log('listN in Angularjs : ', listN);
     rtModelApi.list(topN || defaultTopN, listN || defaultListN, function(result) {
       $scope.contentsList = result;
     });
   };
 
-  getContentsList();
-
-//  $scope.getListOnTime = function() {
-//    getContentsList();
-//    $scope.timeCount = 10;
-//  };
+  $scope.getListOnTime = function() {
+    getContentsList();
+    $scope.$broadcast('timer-set-countdown', updatePeriod);
+    $scope.$broadcast('timer-start');
+  };
 
   // save a new contents
   $scope.saveContents = function() {
