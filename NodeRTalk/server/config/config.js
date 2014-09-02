@@ -8,8 +8,8 @@ var rootPath = path.normalize(__dirname + '/../../');
 module.exports = {
   development: {
     server: ip.address(),
-    port: process.env.PORT || 3030,
-    db: '191.168.245.191',
+    port: process.env.PORT || 80,
+    db: '127.0.0.1',
     db_port: '5001',
     rootPath: rootPath
   }
