@@ -18,7 +18,7 @@ var config = require('./config/config')[env];
 require('./config/express')(app, config);
 
 
-var router = require('./routes/router')(express);
+var router = require('./routes/router')(express, config);
 app.use('/', router);
 
 /// catch 404 and forward to error handler
@@ -55,7 +55,8 @@ app.use(function(err, req, res, next) {
 var startServer = function() {
   app.listen(config.port, function() {
     console.log('\n========== Server is running ==========');
-    console.log("Server's Info : 192.168.246.244 :" + config.port);
+    console.log("Server's Info : " + config.server + ":" + config.port);
+    console.log("DB Server's Info : " + config.db + ":" + config.db_port);
     console.log('=======================================\n');
   });
 };

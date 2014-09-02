@@ -1,8 +1,8 @@
 var Client = require('node-rest-client').Client;
 client = new Client();
 
-module.exports = function(express) {
-  var baseUrl = 'http://192.168.245.191:5001';
+module.exports = function(express, config) {
+  var baseUrl = 'http://' + config.db + ':' + config.db_port;
   var router = express.Router();
 
   router.route('/write')
