@@ -9,7 +9,7 @@ var app = express();
 //var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var env = process.env.RTALK_MODE = process.env.RTALK_MODE || 'development';
 
-app.use(favicon());
+app.use(favicon('./../public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
