@@ -11,7 +11,7 @@ TITLE="WebRTalk RestAPI"
 case "$1" in
         start)
                 f_message "Starting ${TITLE}"
-				/usr/bin/python /home/RTalk/restapi/webRTalk.py &
+				/usr/bin/python /home/RTalk/restapi/webRTalk.py $RTALK_MODE &
                 sleep 2
                 f_message "${TITLE} started"
                 ;;

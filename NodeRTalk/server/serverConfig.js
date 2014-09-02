@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var app = express();
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+//var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var env = process.env.RTALK_MODE = process.env.RTALK_MODE || 'development';
 
 app.use(favicon());
 app.use(logger('dev'));

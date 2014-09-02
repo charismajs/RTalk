@@ -60,5 +60,10 @@ def like(key):
 
 if __name__ == '__main__':
 	#app.debug = True
-	#app.run(host=sys.argv[1],port=5001)
-	app.run(host="127.0.0.1",port=5001)
+
+	hostIp = "0.0.0.0"
+
+	if sys.argv[1] == "production":
+		hostIp = "127.0.0.1"
+
+	app.run(host=hostIp, port=5001)

@@ -4,3 +4,4 @@ NodeRTalk/public/vendor/
 NodeRTalk/server/**/*.html
 NodeRTalk/public/**/*.html
 NodeRTalk/public/**/*.css
+restapi/**/*.log
