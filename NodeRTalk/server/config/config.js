@@ -11,6 +11,7 @@ module.exports = {
     port: process.env.PORT || 80,
     db: '127.0.0.1',
     db_port: '5001',
-    rootPath: rootPath
+    rootPath: rootPath,
+    mode: 'development'
   }
 };
