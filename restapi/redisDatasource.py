@@ -25,7 +25,7 @@ class RedisDataSource:
 
 		self.redis.setex(key, EXPIRE, talk)
 
-		return ast.literal_eval(self.redis.get(key))
+		#return ast.literal_eval(self.redis.get(key))
 
 	def setLike(self, key):
 		if self.redis.exists(key) == True:
@@ -34,8 +34,14 @@ class RedisDataSource:
 			talk['l'] = int(talk['l']) + 1
 			self.redis.getset(key, talk)
 			self.redis.expire(key, expire)
-		return ast.literal_eval(self.redis.get(key))
+		#return ast.literal_eval(self.redis.get(key))
 
 	def deleteTalk(self, key):
 		if self.redis.exists(key) == True:
+			self.redis.delete(key)
+
+	def deleteAll(self):
+		keys = self.redis.keys("*")
+
+		for key in keys:
 			self.redis.delete(key)

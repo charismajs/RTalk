@@ -4,16 +4,19 @@ from datetime import datetime, date, time
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from redisDatasource import RedisDataSource
+from logger import Logger
+import os
 
-DIR="/home/RTalk/restapi/"
+DIR = os.getcwd() + "/"
 
 HOST = "122.199.153.32"
 PORT = 25
-FROM = "ubcarernd@gmail.com"
-SUBJECT = "R&D Talk TOP 3"
+FROM = "RDPart@ubcare.co.kr"
+SUBJECT = "Weekly R&D Talk TOP 3"
 TOPCOUNT = 3
 
 rd = RedisDataSource() 
+logger = Logger(DIR + "sendmail.log")
 
 def sendmail(receivers, topTalks):
 	try:
@@ -38,7 +41,7 @@ def sendmail(receivers, topTalks):
 		server.sendmail(FROM, toList, emailtext)
 		server.close()
 
-		writeLog(emailtext)
+		logger.writeLog(emailtext)
 	except Exception as e:
 		print e		
 
@@ -81,14 +84,6 @@ def makeMessage(talks, template):
 def makeEmail(msg, template):
 	return template.replace('%s', msg)
 
-def writeLog(msg):
-	f = open(DIR + "sendmail.log", 'a')
-
-	f.write(datetime.now().strftime('%y-%m-%d %H:%M:%S')+ "--------------------------------------------------------------------------------------------------------\n")	
-	f.write(msg + "\n")
-
-	f.close()
-
 def getTemplate(filename):
 	with open(DIR + filename, "r") as f:
 		return f.read()
@@ -112,6 +107,6 @@ if len(topTalks) > 0 and len(receivers) > 0:
 
 	for talk in topTalks:
 		print "Delete Talk : " + talk.key
-		#rd.deleteTalk(talk.key)	
+		rd.deleteTalk(talk.key)	
 else:
-	writeLog("Send Mail : None")
+	logger.writeLog("Send Mail : None")

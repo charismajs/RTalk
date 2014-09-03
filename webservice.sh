@@ -12,6 +12,7 @@ case "$1" in
         start)
                 f_message "Starting ${TITLE}"
 				/usr/bin/python /home/RTalk/restapi/webRTalk.py $RTALK_MODE &
+				nohup /usr/local/bin/node /home/RTalk/NodeRTalk/server.js &
                 sleep 2
                 f_message "${TITLE} started"
                 ;;
@@ -21,6 +22,10 @@ case "$1" in
                 if [[ $pid != "" ]]; then
                         kill -9 $pid
                 fi
+				pid=`ps aux | grep "/usr/local/bin/node /home/RTalk/NodeRTalk/server.js" | awk '{print $2}'`
+				if [[ $pid != "" ]]; then
+					kill -9 $pid
+				fi
                 f_message "${TITLE} stopped"
                 ;;
         *)

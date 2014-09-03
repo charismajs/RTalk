@@ -2,9 +2,12 @@ from flask import Flask, jsonify, render_template, request, send_file, abort
 import sys
 from rtalk import RTalk, RTalkList
 from redisDatasource import RedisDataSource
+from logger import Logger
+import os
 
 app = Flask(__name__)
 rd = RedisDataSource()
+logger = Logger(os.getcwd() + "/webRTalk.log")
 
 def makeJson(arrayName, talks):
 	jsonTalks = []
@@ -34,7 +37,8 @@ def list(topn, listcount):
 
 		return "{" + makeJson("topn", topTalks) + "," + makeJson("list", genTalks) + "}"
 	except Exception as e:
-		return jsonify({'result':'error', 'reason':e })
+		logger.writeLog("error [def list] : %s" % e)
+		abort(500)
 
 @app.route('/write', methods=['POST'])
 def write():
@@ -47,16 +51,24 @@ def write():
 
 		rtalk = request.json['talk']
 
-		return jsonify(rd.setTalk(rtalk))
+		rd.setTalk(rtalk)
+		#return jsonify(rd.setTalk(rtalk))
+		return jsonify({'result':'ok'})
 	except Exception as e:
-		return jsonify({'result':'error', 'reason':e })
+		logger.writeLog("error [def write] : %s" % e)
+		#return jsonify({'result':'error', 'reason':e })
+		abort(500)
 
 @app.route('/like/<key>', methods=['GET'])
 def like(key):
 	try:
-		return jsonify(rd.setLike(key))
+		rd.setLike(key)
+		#return jsonify(rd.setLike(key))
+		return jsonify({'result':'ok'})
 	except Exception as e:
-		return jsonify({'result':'error', 'reason':e })	
+		logger.writeLog("error [def like] : %s" % e)
+		#return jsonify({'result':'error', 'reason':e })	
+		abort(500)
 
 if __name__ == '__main__':
 	#app.debug = True

@@ -1,10 +1,5 @@
-<html>
-<head>
-
-</head>
-<body>
-    <div style="margin:20px;font-size:x-large;font-weight:bold;">R&D Talk TOP 3</div>
-	%s
-</body>
-</html>
+<div style="border-radius: 5px;padding:15px;  margin: 20px; background-color:rgb(18, 194, 199);width:70%;">
+<span style="font-family: verdana; font-size: large; font-weight: bold; color:white; ">Weekly R&D Talk TOP 3</span>
+%s
+</div>
 
