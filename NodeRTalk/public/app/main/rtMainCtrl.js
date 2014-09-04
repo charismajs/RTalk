@@ -22,7 +22,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
 
   // save a new contents
   $scope.saveContents = function() {
-    rtModelApi.write($scope.msg, function(newContents) {
+    rtModelApi.write($scope.msg, function(result) {
       getListOnTime();
       $scope.msg = '';
       rtNotifier.notify('Saved it!!');
