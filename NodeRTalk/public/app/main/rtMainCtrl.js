@@ -13,7 +13,8 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
     });
   };
 
-  $scope.getListOnTime = function() {
+  var getListOnTime = function()
+  {
     getContentsList();
     $scope.$broadcast('timer-set-countdown', updatePeriod);
     $scope.$broadcast('timer-start');
@@ -22,7 +23,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
   // save a new contents
   $scope.saveContents = function() {
     rtModelApi.write($scope.msg, function(newContents) {
-      getContentsList();
+      getListOnTime();
       $scope.msg = '';
       rtNotifier.notify('Saved it!!');
     });
@@ -31,10 +32,11 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
   // thumbs up
   $scope.likeContents = function(contents) {
     rtModelApi.like(contents, function(result) {
-      getContentsList();
+      getListOnTime();
       rtNotifier.notify('Like it!!');
     });
   };
 
   $scope.getContentsList = getContentsList;
+  $scope.getListOnTime = getListOnTime;
 });
