@@ -1,7 +1,7 @@
 /**
  * Created by LuckyJS on 2014. 8. 28..
  */
-angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNotifier, ignoreChar) {
+angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNotifier) {
   var defaultTopN = '3', defaultListN = '0';
   $scope.contentsList = '';
   var updatePeriod = 10;
