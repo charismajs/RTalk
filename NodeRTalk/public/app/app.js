@@ -3,7 +3,7 @@
  */
 angular.module('app', ['ngResource', 'ngRoute', 'timer']);
 
-angular.module('app').config(function($routeProvider, $locationProvider) {
+angular.module('app').config(function($routeProvider, $locationProvider, ngSanitize) {
   $locationProvider.html5Mode(true);
   $routeProvider
     .when('/', {
