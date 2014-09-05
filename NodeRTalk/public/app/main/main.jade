@@ -11,7 +11,7 @@
       .panel-body
         .panel
           .input-group
-            input.form-control(type='text', name='message', ng-model='msg | ignoreChar', ng-minlength="1", ng-maxlength="100", ng-keyup='form.message.$valid && $event.keyCode==13 && saveContents()', placeholder='하고 싶은 말을 자유롭게 작성해주세요~^^ (100자 이내)', ng-required="true", autofocus="true")
+            input.form-control(type='text', name='message', ng-model='msg', ng-minlength="1", ng-maxlength="100", ng-keyup='form.message.$valid && $event.keyCode==13 && saveContents()', placeholder='하고 싶은 말을 자유롭게 작성해주세요~^^ (100자 이내)', ng-required="true", autofocus="true")
             span.input-group-btn
               button.btn.btn-primary(type='button', ng-click='saveContents()') 전송
         .panel
