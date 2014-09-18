@@ -25,8 +25,6 @@ class RedisDataSource:
 
 		self.redis.setex(key, EXPIRE, talk)
 
-		#return ast.literal_eval(self.redis.get(key))
-
 	def setLike(self, key):
 		if self.redis.exists(key) == True:
 			expire = self.redis.ttl(key)

@@ -5,13 +5,13 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from redisDatasource import RedisDataSource
 from logger import Logger
-import os
+import mailsender
 
-DIR = os.getcwd() + "/"
+DIR = "/home/RTalk/restapi/"
 
-HOST = "122.199.153.32"
-PORT = 25
-FROM = "RDPart@ubcare.co.kr"
+#FROM = "jeonyoungmin@ubware.com"
+FROM = "RDPart@ubware.com"
+#FROM = "ubcarernd@gmail.com"
 SUBJECT = "Weekly R&D Talk TOP 3"
 TOPCOUNT = 3
 
@@ -19,31 +19,10 @@ rd = RedisDataSource()
 logger = Logger(DIR + "sendmail.log")
 
 def sendmail(receivers, topTalks):
-	try:
-		toList = ",".join(receivers)
-		email = MIMEMultipart('alternative')
-		email['Subject'] = SUBJECT
-		email['From'] = FROM
-		email['To'] = toList 
+	plaintext = makeEmail(makeMessage(topTalks, "{0}, like {2}, {1}"), "%s")
+	htmltext = makeEmail(makeMessage(topTalks, getTemplate("contenttemplate")), getTemplate("emailtemplate"))
 
-		plaintext = makeEmail(makeMessage(topTalks, "%s, %s, %s"), "%s")
-		htmltext = makeEmail(makeMessage(topTalks, getTemplate("contenttemplate")), getTemplate("emailtemplate"))
-
-		email.attach(MIMEText(plaintext, 'plain'))
-		email.attach(MIMEText(htmltext, 'html'))
-	
-		server = smtplib.SMTP(HOST, PORT)
-		#server.ehlo()
-		#server.starttls()
-		#server.login(USERID, PASSWD)
-		
-		emailtext = email.as_string()
-		server.sendmail(FROM, toList, emailtext)
-		server.close()
-
-		logger.writeLog(emailtext)
-	except Exception as e:
-		print e		
+	mailsender.sendmail(FROM, receivers, SUBJECT, plaintext, htmltext)
 
 def gettalk():
 	try:
@@ -62,7 +41,7 @@ def gettalk():
 		return rtalkList.getTopN(TOPCOUNT)
 
 	except Exception as e:
-		print e		
+		logger.writeLog(str(e))
 
 def makeMessage(talks, template):
 	try:
@@ -79,7 +58,7 @@ def makeMessage(talks, template):
 
 		return u"\n".join(talkmessages).encode('utf-8')
 	except Exception as e:
-		print e
+		logger.writeLog(str(e))
 
 def makeEmail(msg, template):
 	return template.replace('%s', msg)
@@ -96,7 +75,7 @@ while True:
 	line = emaillist.readline()
 	if not line:
 		break
-	receivers.append(line.rstrip('\n'))
+	receivers.append(line.rstrip('\n') + "@ubware.com")
 
 emaillist.close()
 

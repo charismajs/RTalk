@@ -3,11 +3,10 @@ import sys
 from rtalk import RTalk, RTalkList
 from redisDatasource import RedisDataSource
 from logger import Logger
-import os
 
 app = Flask(__name__)
 rd = RedisDataSource()
-logger = Logger(os.getcwd() + "/webRTalk.log")
+logger = Logger("/home/RTalk/restapi/webRTalk.log")
 
 def makeJson(arrayName, talks):
 	jsonTalks = []
@@ -47,16 +46,20 @@ def write():
 			abort(400)
 
 		if 'talk' in request.json and type(request.json['talk']) != unicode:
-			abort(404)
+			abort(400)
 
 		rtalk = request.json['talk']
 
-		rd.setTalk(rtalk)
-		#return jsonify(rd.setTalk(rtalk))
-		return jsonify({'result':'ok'})
+		rtalk = rtalk.strip()
+
+		if len(rtalk) == 0:
+			abort(400)
+			return jsonify({'result':'error'})
+		else:
+			rd.setTalk(rtalk)
+			return jsonify({'result':'ok'})
 	except Exception as e:
 		logger.writeLog("error [def write] : %s" % e)
-		#return jsonify({'result':'error', 'reason':e })
 		abort(500)
 
 @app.route('/like/<key>', methods=['GET'])
