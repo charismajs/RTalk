@@ -25,7 +25,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
     rtModelApi.write($scope.msg, function(result) {
       getListOnTime();
       $scope.msg = '';
-      rtNotifier.notify('Saved it!!');
+      rtNotifier.success('Saved it!!');
     });
   };
 
@@ -33,7 +33,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
   $scope.likeContents = function(contents) {
     rtModelApi.like(contents, function(result) {
       getListOnTime();
-      rtNotifier.notify('Like it!!');
+      rtNotifier.info('Like it!!');
     });
   };
 
@@ -41,7 +41,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
   $scope.dislikeContents = function(contents) {
     rtModelApi.dislike(contents, function(result) {
       getListOnTime();
-      rtNotifier.notify('Dislike it!!');
+      rtNotifier.error('Dislike it!!');
     });
   };
 
