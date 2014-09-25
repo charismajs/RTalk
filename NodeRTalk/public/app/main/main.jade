@@ -15,8 +15,8 @@
             span.input-group-btn
               button.btn.btn-primary(type='button', ng-click='saveContents()') 전송
         .panel
-          table.w-100
-            tr.topNColor(ng-repeat='top in contentsList.topn')
+          table.w-100.topNColor(ng-repeat='top in contentsList.topn')
+            tr
               td
                 span.rtalk-large {{top.t}}
                 br

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="37aa936c-8bfa-4cec-b3f9-ead8a69e1658" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" afterPath="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js" afterPath="$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js" afterPath="$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RTalk.iws" />
@@ -31,8 +29,8 @@
       <file leaf-file-name="main.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5553822" vertical-offset="79" max-vertical-offset="735">
-              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.2979719" vertical-offset="79" max-vertical-offset="735">
+              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -132,9 +130,9 @@
         <option value="$PROJECT_DIR$/NodeRTalk/public/app/model/rtDislikeContents.js" />
         <option value="$PROJECT_DIR$/NodeRTalk/server/includes/scripts.jade" />
         <option value="$PROJECT_DIR$/NodeRTalk/public/app/service/rtModelApi.js" />
-        <option value="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" />
         <option value="$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js" />
         <option value="$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js" />
+        <option value="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" />
       </list>
     </option>
   </component>
@@ -739,7 +737,11 @@
       <created>1411632936396</created>
       <updated>1411632936396</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="modify UI&#10;change notify message box color">
+      <created>1411633656294</created>
+      <updated>1411633656294</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -782,7 +784,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="modify to hosting at localhost only in db server(restapi)&#10;&#10;" />
     <MESSAGE value="fix bug about hosting configuration(config.mode)" />
     <MESSAGE value="fix bug for listing &#10; - arguments setting" />
     <MESSAGE value="add mode&#10; - development(default), production&#10; - by process.env.RTALK_MODE" />
@@ -807,7 +808,8 @@
     <MESSAGE value="refactoring and add function&#10; - split function : send mail&#10; - add function : logging" />
     <MESSAGE value="add dislike function&#10;" />
     <MESSAGE value="modify UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify UI" />
+    <MESSAGE value="modify UI&#10;change notify message box color" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify UI&#10;change notify message box color" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1191,8 +1193,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5553822" vertical-offset="79" max-vertical-offset="735">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.2979719" vertical-offset="79" max-vertical-offset="735">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
           <folding />
         </state>
       </provider>
