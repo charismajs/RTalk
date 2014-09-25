@@ -1,4 +1,4 @@
 <div style="border-radius:5px;padding:15px;margin:20px;border:1px solid gray;width:92%;background-color:white;">
 	<div style="font-family:dotum,verdana;">{0}</div>
-	<div style="font-size:x-small;font-family:verdana;"> {1}, like {2}</div>
+	<div style="font-size:x-small;font-family:verdana;"> {1}, like {2}, dislike {3}</div>
 </div>

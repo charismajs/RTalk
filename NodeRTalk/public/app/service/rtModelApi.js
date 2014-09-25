@@ -1,7 +1,7 @@
 /**
  * Created by LuckyJS on 2014. 8. 29..
  */
-angular.module('app').service('rtModelApi', function(rtContentsList, rtWriteContents, rtLikeContents) {
+angular.module('app').service('rtModelApi', function(rtContentsList, rtWriteContents, rtLikeContents, rtDislikeContents) {
   var list = function(topN, listN, next) {
     console.log('-- start to get a list in list function');
     rtContentsList.query(
@@ -39,9 +39,22 @@ angular.module('app').service('rtModelApi', function(rtContentsList, rtWriteCont
     );
   };
 
+  var dislike = function(contents, next) {
+    console.log('-- start to dislike the talk in like function');
+    rtDislikeContents.dislike(
+      {
+        key: contents.k
+      }, function(result) {
+        console.log('-- complete to dislike : ', result);
+        next(result);
+      }
+    );
+  };
+
   return {
     list: list,
     write: write,
-    like: like
+    like: like,
+    dislike: dislike
   };
 });

@@ -27,8 +27,10 @@
                         span.rtalk-small {{top.wt}}
                       td.w-5
                         span.badge.rtalk-large {{top.l}}
+                      span.glyphicon.glyphicon-thumbs-up.btn-lg.clickable(ng-click='likeContents(top)')
                       td.w-5
-                        span.glyphicon.glyphicon-thumbs-up.btn-lg.clickable(ng-click='likeContents(top)')
+                        span.badge.rtalk-large {{top.d}}
+                        span.glyphicon.glyphicon-thumbs-down.btn-lg.clickable(ng-click='dislikeContents(top)')
         .panel.panel-info
           table.table.table-striped
             tbody
@@ -39,5 +41,7 @@
                   span.rtalk-small {{contents.wt}}
                 td.w-5.v-m
                   span.badge.pull-right.rtalk-large {{contents.l}}
+                span.glyphicon.glyphicon-thumbs-up.btn-lg.clickable(ng-click='likeContents(contents)')
                 td.w-5.v-m
-                  span.glyphicon.glyphicon-thumbs-up.btn-lg.clickable(ng-click='likeContents(contents)')
+                  span.badge.pull-right.rtalk-large {{contents.d}}
+                  span.glyphicon.glyphicon-thumbs-down.btn-lg.clickable(ng-click='dislikeContents(contents)')

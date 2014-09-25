@@ -27,6 +27,16 @@ module.exports = function(express, config) {
       })
     });
 
+  router.route('/dislike/:key')
+    .get(function(req, res) {
+      client.get(baseUrl + '/dislike/' + req.params.key, function(data, response) {
+//        console.log('data : ', data);
+//        console.log('response : ', response);
+
+        res.status(response.statusCode).send(data);
+      })
+    });
+
   router.route('/list/:topn/:listn')
     .get(function(req, res) {
 //      console.log('topN : ' + req.params.topn +', listN : ' + req.params.listn);

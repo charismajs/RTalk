@@ -66,11 +66,18 @@ def write():
 def like(key):
 	try:
 		rd.setLike(key)
-		#return jsonify(rd.setLike(key))
 		return jsonify({'result':'ok'})
 	except Exception as e:
 		logger.writeLog("error [def like] : %s" % e)
-		#return jsonify({'result':'error', 'reason':e })	
+		abort(500)
+
+@app.route('/dislike/<key>', methods=['GET'])
+def dislike(key):
+	try:
+		rd.setDislike(key)
+		return jsonify({'result':'ok'})
+	except Exception as e:
+		logger.writeLog("error [def like] : %s" % e)
 		abort(500)
 
 if __name__ == '__main__':

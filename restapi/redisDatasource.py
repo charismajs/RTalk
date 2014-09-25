@@ -21,7 +21,7 @@ class RedisDataSource:
 		if self.redis.exists(key) == True:
 			return self.setTalk(talkString)
 
-		talk = {'k':key,'t':talkString,'wt':datetime.now().strftime('%y-%m-%d %H:%M:%S'),'l':'0'}
+		talk = {'k':key,'t':talkString,'wt':datetime.now().strftime('%y-%m-%d %H:%M:%S'),'l':'0','d':'0'}
 
 		self.redis.setex(key, EXPIRE, talk)
 
@@ -34,6 +34,14 @@ class RedisDataSource:
 			self.redis.expire(key, expire)
 		#return ast.literal_eval(self.redis.get(key))
 
+	def setDislike(self, key):
+		if self.redis.exists(key) == True:
+			expire = self.redis.ttl(key)
+			talk = ast.literal_eval(self.redis.get(key))
+			talk['d'] = int(talk['d']) + 1
+			self.redis.getset(key, talk)
+			self.redis.expire(key, expire)
+		
 	def deleteTalk(self, key):
 		if self.redis.exists(key) == True:
 			self.redis.delete(key)

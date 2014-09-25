@@ -37,6 +37,14 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
     });
   };
 
+  // thumbs down
+  $scope.dislikeContents = function(contents) {
+    rtModelApi.dislike(contents, function(result) {
+      getListOnTime();
+      rtNotifier.notify('Dislike it!!');
+    });
+  };
+
   $scope.getContentsList = getContentsList;
   $scope.getListOnTime = getListOnTime;
 });

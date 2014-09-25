@@ -9,9 +9,7 @@ import mailsender
 
 DIR = "/home/RTalk/restapi/"
 
-#FROM = "jeonyoungmin@ubware.com"
 FROM = "RDPart@ubware.com"
-#FROM = "ubcarernd@gmail.com"
 SUBJECT = "Weekly R&D Talk TOP 3"
 TOPCOUNT = 3
 
@@ -19,7 +17,7 @@ rd = RedisDataSource()
 logger = Logger(DIR + "sendmail.log")
 
 def sendmail(receivers, topTalks):
-	plaintext = makeEmail(makeMessage(topTalks, "{0}, like {2}, {1}"), "%s")
+	plaintext = makeEmail(makeMessage(topTalks, "{0}, like {2}, dislike {3}, {1}"), "%s")
 	htmltext = makeEmail(makeMessage(topTalks, getTemplate("contenttemplate")), getTemplate("emailtemplate"))
 
 	mailsender.sendmail(FROM, receivers, SUBJECT, plaintext, htmltext)
@@ -54,6 +52,7 @@ def makeMessage(talks, template):
 			t = template.replace("{0}", talk.talk)
 			t = t.replace("{1}", talk.writetime.strftime('%y-%m-%d %H:%M'))
 			t = t.replace("{2}", str(talk.like))
+			t = t.replace("{3}", str(talk.dislike))
 			talkmessages.append(t)
 
 		return u"\n".join(talkmessages).encode('utf-8')

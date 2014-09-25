@@ -8,13 +8,15 @@ class RTalk:
 		self.talk = self.rtalk['t']
 		self.writetime = datetime.strptime(self.rtalk['wt'], '%y-%m-%d %H:%M:%S')
 		self.like = int(self.rtalk['l'])
+		self.dislike = int(self.rtalk['d'])
+		self.favorite = self.like - self.dislike
 		self.key = self.rtalk['k']
 
     def __repr__(self):
-        return repr((self.key, self.talk, self.writetime, self.like))
+        return repr((self.key, self.talk, self.writetime, self.like, self.dislike, self.favorite))
 
     def toString(self):
-        talk = '{"k":"' + self.key + '","t":"' + self.talk + '","wt":"' + self.writetime.strftime('%y-%m-%d %H:%M:%S') + '","l":"' + str(self.like) + '"}'
+        talk = '{"k":"' + self.key + '","t":"' + self.talk + '","wt":"' + self.writetime.strftime('%y-%m-%d %H:%M:%S') + '","l":"' + str(self.like) + '","d":"' + str(self.dislike) + '"}'
         return talk
 
 
@@ -31,7 +33,7 @@ class RTalkList:
 
 		self.topTalks = ifilter(lambda talk: talk.like > 0, self.rtalks)
 		self.topTalks = sorted(self.topTalks, key=lambda talk:talk.writetime, reverse=True)
-		self.topTalks = sorted(self.topTalks, key=lambda talk:talk.like, reverse=True)
+		self.topTalks = sorted(self.topTalks, key=lambda talk:talk.favorite, reverse=True)
 		
 		if len(self.topTalks) >= self.topCount:
 			self.topTalks = self.topTalks[:self.topCount]
