@@ -29,8 +29,8 @@
       <file leaf-file-name="main.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2605178" vertical-offset="109" max-vertical-offset="750">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.45469254" vertical-offset="19" max-vertical-offset="750">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -39,8 +39,8 @@
       <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NodeRTalk/public/vendor/bootstrap/dist/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="78394" max-vertical-offset="93135">
-              <caret line="5230" column="14" selection-start-line="5230" selection-start-column="1" selection-end-line="5230" selection-end-column="14" />
+            <state vertical-scroll-proportion="-7.576923" vertical-offset="21148" max-vertical-offset="93135">
+              <caret line="1423" column="514" selection-start-line="1423" selection-start-column="509" selection-end-line="1423" selection-end-column="514" />
               <folding />
             </state>
           </provider>
@@ -763,7 +763,11 @@
       <created>1411634049959</created>
       <updated>1411634049959</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="modify UI&#10;change notify message box color">
+      <created>1411634130830</created>
+      <updated>1411634130830</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1207,16 +1211,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NodeRTalk/public/vendor/bootstrap/dist/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="78394" max-vertical-offset="93135">
-          <caret line="5230" column="14" selection-start-line="5230" selection-start-column="1" selection-end-line="5230" selection-end-column="14" />
+        <state vertical-scroll-proportion="-7.576923" vertical-offset="21148" max-vertical-offset="93135">
+          <caret line="1423" column="514" selection-start-line="1423" selection-start-column="509" selection-end-line="1423" selection-end-column="514" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2605178" vertical-offset="109" max-vertical-offset="750">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.45469254" vertical-offset="19" max-vertical-offset="750">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
