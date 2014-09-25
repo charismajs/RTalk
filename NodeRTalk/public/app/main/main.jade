@@ -23,11 +23,11 @@
                   br
                   span.rtalk-small {{top.wt}}
                 td.w-15.clickable(ng-click='likeContents(top)')
-                  span.badge.rtalk-large {{top.l}}
                   span.glyphicon.glyphicon-thumbs-up.btn-lg
+                  span.badge.rtalk-large {{top.l}}
                 td.w-15.clickable(ng-click='dislikeContents(top)')
-                  span.badge.rtalk-large {{top.d}}
                   span.glyphicon.glyphicon-thumbs-down.btn-lg
+                  span.badge.rtalk-large {{top.d}}
         .panel.panel-info
           table.table.w-100.table-striped
             tbody
@@ -37,8 +37,8 @@
                   br
                   span.rtalk-small {{contents.wt}}
                 td.w-15.v-m.clickable(ng-click='likeContents(contents)')
-                  span.badge.pull-right.rtalk-large {{contents.l}}
                   span.glyphicon.glyphicon-thumbs-up.btn-lg
+                  span.badge.rtalk-large {{contents.l}}
                 td.w-15.v-m.clickable(ng-click='dislikeContents(contents)')
-                  span.badge.pull-right.rtalk-large {{contents.d}}
                   span.glyphicon.glyphicon-thumbs-down.btn-lg
+                  span.badge.rtalk-large {{contents.d}}
