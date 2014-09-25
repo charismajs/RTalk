@@ -28,8 +28,8 @@
                 span.glyphicon.glyphicon-thumbs-down.btn-lg
                 span.badge.rtalk-large {{top.d}}
         .panel.panel-info.w-100
-          table.table.w-100.table-striped
-            tr(ng-repeat='contents in contentsList.list')
+          table.w-100.table-striped
+            tr.contentsTableRow(ng-repeat='contents in contentsList.list')
               td
                 span.rtalk-large {{contents.t}}
                 br
