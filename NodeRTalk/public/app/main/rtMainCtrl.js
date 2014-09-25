@@ -25,7 +25,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
     rtModelApi.write($scope.msg, function(result) {
       getListOnTime();
       $scope.msg = '';
-//      rtNotifier.success('Saved it!!');
+      rtNotifier.success('Saved it!!');
     });
   };
 
