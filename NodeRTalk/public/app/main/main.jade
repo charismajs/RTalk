@@ -15,18 +15,19 @@
             span.input-group-btn
               button.btn.btn-primary(type='button', ng-click='saveContents()') 전송
         .panel
-          table.w-100.topNColor(ng-repeat='top in contentsList.topn')
-            tr
-              td
-                span.rtalk-large {{top.t}}
-                br
-                span.rtalk-small {{top.wt}}
-              td.w-10.clickable(ng-click='likeContents(top)')
-                span.badge.rtalk-large {{top.l}}
-                span.glyphicon.glyphicon-thumbs-up.btn-lg
-              td.w-10.clickable(ng-click='dislikeContents(top)')
-                span.badge.rtalk-large {{top.d}}
-                span.glyphicon.glyphicon-thumbs-down.btn-lg
+          .row.topNColor(ng-repeat='top in contentsList.topn')
+            table.w-100
+              tr
+                td
+                  span.rtalk-large {{top.t}}
+                  br
+                  span.rtalk-small {{top.wt}}
+                td.w-10.clickable(ng-click='likeContents(top)')
+                  span.badge.rtalk-large {{top.l}}
+                  span.glyphicon.glyphicon-thumbs-up.btn-lg
+                td.w-10.clickable(ng-click='dislikeContents(top)')
+                  span.badge.rtalk-large {{top.d}}
+                  span.glyphicon.glyphicon-thumbs-down.btn-lg
         .panel.panel-info
           table.table.w-100.table-striped
             tbody
