@@ -15,7 +15,7 @@
             span.input-group-btn
               button.btn.btn-primary(type='button', ng-click='saveContents()') 전송
         .panel.panel-success.w-100.topNMargin(ng-repeat='top in contentsList.topn')
-          table.topNColor.w-100.contentsMargin
+          table.topNColor.w-100
             tr
               td
                 span.rtalk-large {{top.t}}
@@ -28,8 +28,8 @@
                 span.glyphicon.glyphicon-thumbs-down.btn-lg
                 span.badge.rtalk-large {{top.d}}
         .panel.panel-info.w-100
-          table.w-100.table-striped
-            tr.contentsTableRow(ng-repeat='contents in contentsList.list')
+          table.w-100.table-striped.table
+            tr(ng-repeat='contents in contentsList.list')
               td
                 span.rtalk-large {{contents.t}}
                 br
