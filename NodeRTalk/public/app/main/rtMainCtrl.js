@@ -16,8 +16,8 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
   var getListOnTime = function()
   {
     getContentsList();
-//    $scope.$broadcast('timer-set-countdown', updatePeriod);
-//    $scope.$broadcast('timer-start');
+    $scope.$broadcast('timer-set-countdown', updatePeriod);
+    $scope.$broadcast('timer-start');
   };
 
   // save a new contents
@@ -33,7 +33,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
   $scope.likeContents = function(contents) {
     rtModelApi.like(contents, function(result) {
       getListOnTime();
-//      rtNotifier.info('Like it!!');
+      rtNotifier.info('Like it!!');
     });
   };
 
@@ -41,7 +41,7 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
   $scope.dislikeContents = function(contents) {
     rtModelApi.dislike(contents, function(result) {
       getListOnTime();
-//      rtNotifier.error('Dislike it!!');
+      rtNotifier.error('Dislike it!!');
     });
   };
 

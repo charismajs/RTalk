@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37aa936c-8bfa-4cec-b3f9-ead8a69e1658" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" afterPath="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js" afterPath="$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js" afterPath="$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RTalk.iws" />
@@ -26,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.jade" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6359223" vertical-offset="102" max-vertical-offset="720">
+            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="720">
               <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
               <folding />
             </state>
@@ -46,11 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rtNotifier.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="rtNotifier.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.19017433" vertical-offset="0" max-vertical-offset="631">
+              <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="toastr.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NodeRTalk/public/vendor/toastr/toastr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2325" max-vertical-offset="4995">
+              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -70,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="825">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -138,11 +149,11 @@
         <option value="$PROJECT_DIR$/NodeRTalk/public/app/model/rtDislikeContents.js" />
         <option value="$PROJECT_DIR$/NodeRTalk/server/includes/scripts.jade" />
         <option value="$PROJECT_DIR$/NodeRTalk/public/app/service/rtModelApi.js" />
-        <option value="$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js" />
         <option value="$PROJECT_DIR$/NodeRTalk/public/css/site.styl" />
         <option value="$PROJECT_DIR$/NodeRTalk/public/vendor/bootstrap/dist/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js" />
         <option value="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" />
+        <option value="$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js" />
+        <option value="$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js" />
       </list>
     </option>
   </component>
@@ -831,7 +842,11 @@
       <created>1411784108914</created>
       <updated>1411784108914</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="modify UI">
+      <created>1411784596288</created>
+      <updated>1411784596288</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1202,14 +1217,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NodeRTalk/public/vendor/toastr/toastr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2293578" vertical-offset="0" max-vertical-offset="4995">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/service/rtModelApi.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
@@ -1230,14 +1237,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75746924" vertical-offset="1159" max-vertical-offset="3585">
           <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1266,14 +1265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="825">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NodeRTalk/public/vendor/bootstrap/dist/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.576923" vertical-offset="16798" max-vertical-offset="93135">
@@ -1284,8 +1275,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6359223" vertical-offset="102" max-vertical-offset="720">
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="720">
           <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/rtMainCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="825">
+          <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NodeRTalk/public/vendor/toastr/toastr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2325" max-vertical-offset="4995">
+          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19017433" vertical-offset="0" max-vertical-offset="631">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
           <folding />
         </state>
       </provider>

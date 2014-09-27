@@ -4,6 +4,9 @@
 angular.module('app').value('rtToastr', toastr);
 
 angular.module('app').factory('rtNotifier', function (rtToastr) {
+  rtToastr.options.timeout = 30;
+  rtToastr.options.extendedTimeOut = 60;
+
   return {
     info: function (msg) {
       rtToastr.info(msg);
