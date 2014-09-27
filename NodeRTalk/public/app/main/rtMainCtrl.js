@@ -4,7 +4,7 @@
 angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNotifier) {
   var defaultTopN = '3', defaultListN = '0';
   $scope.contentsList = '';
-  var updatePeriod = 10;
+  var updatePeriod = 20;
 
   // get a contents List
   var getContentsList = function(topN, listN) {
