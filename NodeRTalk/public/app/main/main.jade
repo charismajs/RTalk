@@ -22,21 +22,21 @@
                 br
                 span.rtalk-small {{top.wt}}
               td.w-15.clickable(ng-click='likeContents(top)')
-                span.glyphicon.glyphicon-thumbs-up.btn-lg
+                span.glyphicon.glyphicon-thumbs-up
                 span.badge.rtalk-large {{top.l}}
               td.w-15.clickable(ng-click='dislikeContents(top)')
-                span.glyphicon.glyphicon-thumbs-down.btn-lg
+                span.glyphicon.glyphicon-thumbs-down
                 span.badge.rtalk-large {{top.d}}
         .panel.panel-info.w-100
-          table.w-100.table-striped.table
+          table.table.table-striped
             tr(ng-repeat='contents in contentsList.list')
               td
                 span.rtalk-large {{contents.t}}
                 br
                 span.rtalk-small {{contents.wt}}
               td.w-15.v-m.clickable(ng-click='likeContents(contents)')
-                span.glyphicon.glyphicon-thumbs-up.btn-lg
+                span.glyphicon.glyphicon-thumbs-up
                 span.badge.rtalk-large {{contents.l}}
               td.w-15.v-m.clickable(ng-click='dislikeContents(contents)')
-                span.glyphicon.glyphicon-thumbs-down.btn-lg
+                span.glyphicon.glyphicon-thumbs-down
                 span.badge.rtalk-large {{contents.d}}

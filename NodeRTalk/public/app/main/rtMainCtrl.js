@@ -16,8 +16,8 @@ angular.module('app').controller('rtMainCtrl', function($scope, rtModelApi, rtNo
   var getListOnTime = function()
   {
     getContentsList();
-    $scope.$broadcast('timer-set-countdown', updatePeriod);
-    $scope.$broadcast('timer-start');
+//    $scope.$broadcast('timer-set-countdown', updatePeriod);
+//    $scope.$broadcast('timer-start');
   };
 
   // save a new contents
