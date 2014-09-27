@@ -18,25 +18,25 @@
           table.topNColor.w-100
             tr
               td
-                span.rtalk-large {{top.t}}
+                span.rtalk-large.contentsWordBreak {{top.t}}
                 br
                 span.rtalk-small {{top.wt}}
-              td.w-10.clickable.text-center(ng-click='likeContents(top)')
+              td.col-md-1.col-xs-2.clickable.text-center(ng-click='likeContents(top)')
                 span.glyphicon.glyphicon-thumbs-up &nbsp;
                 span.badge.rtalk-large {{top.l}}
-              td.w-10.clickable.text-center(ng-click='dislikeContents(top)')
+              td.col-md-1.col-xs-2.clickable.text-center(ng-click='dislikeContents(top)')
                 span.glyphicon.glyphicon-thumbs-down &nbsp;
                 span.badge.rtalk-large {{top.d}}
         .panel.panel-info.w-100
           table.table.table-striped
             tr(ng-repeat='contents in contentsList.list')
               td
-                span.rtalk-large {{contents.t}}
+                span.rtalk-large.contentsWordBreak {{contents.t}}
                 br
                 span.rtalk-small {{contents.wt}}
-              td.w-10.v-m.clickable.text-center(ng-click='likeContents(contents)')
+              td.col-md-1.col-xs-2.v-m.clickable.text-center(ng-click='likeContents(contents)')
                 span.glyphicon.glyphicon-thumbs-up &nbsp;
                 span.badge.rtalk-large {{contents.l}}
-              td.w-10.v-m.clickable.text-center(ng-click='dislikeContents(contents)')
+              td.col-md-1.col-xs-2.v-m.clickable.text-center(ng-click='dislikeContents(contents)')
                 span.glyphicon.glyphicon-thumbs-down &nbsp;
                 span.badge.rtalk-large {{contents.d}}
