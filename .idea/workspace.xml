@@ -29,8 +29,8 @@
       <file leaf-file-name="main.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24757281" vertical-offset="102" max-vertical-offset="720">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.5631068" vertical-offset="102" max-vertical-offset="720">
+              <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -857,7 +857,11 @@
       <created>1411786663674</created>
       <updated>1411786663674</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="adjust width of glyphicon area">
+      <created>1411946302053</created>
+      <updated>1411946302053</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -900,7 +904,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="add mode&#10; - development(default), production&#10; - by process.env.RTALK_MODE" />
     <MESSAGE value="change port for development hosting : 5001&#10; - to avoid crash port during developing in my environment" />
     <MESSAGE value="add auto update function every 10s&#10;modify ui about auto update&#10;add function to save when enter key pressed in inputbox&#10;" />
     <MESSAGE value="add validation about message" />
@@ -925,7 +928,8 @@
     <MESSAGE value="modify UI" />
     <MESSAGE value="modify UI&#10;change a update time from 10 to 20&#10;" />
     <MESSAGE value="apply a word break" />
-    <option name="LAST_COMMIT_MESSAGE" value="apply a word break" />
+    <MESSAGE value="adjust width of glyphicon area" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust width of glyphicon area" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1310,8 +1314,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24757281" vertical-offset="102" max-vertical-offset="720">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.5631068" vertical-offset="102" max-vertical-offset="720">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
           <folding />
         </state>
       </provider>
