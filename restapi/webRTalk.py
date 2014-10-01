@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request, send_file, abort
+from flask import Flask, jsonify, render_template, request, send_file, abort 
 import sys
 from rtalk import RTalk, RTalkList
 from redisDatasource import RedisDataSource
@@ -15,6 +15,9 @@ def makeJson(arrayName, talks):
 		jsonTalks.append(talk.toString())
 
 	return '"' + arrayName + '":[' + ",".join(jsonTalks) + "]"
+
+def makeJsonResponse(resp):
+	return Response(resp, mimetype='application/json')
 
 @app.route('/list/<int:topn>/<int:listcount>', methods=['GET'])
 def list(topn, listcount):

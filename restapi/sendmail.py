@@ -6,6 +6,7 @@ from email.mime.text import MIMEText
 from redisDatasource import RedisDataSource
 from logger import Logger
 import mailsender
+import datetime
 
 DIR = "/home/RTalk/restapi/"
 
@@ -15,6 +16,21 @@ TOPCOUNT = 3
 
 rd = RedisDataSource() 
 logger = Logger(DIR + "sendmail.log")
+holidayList = []
+
+def readHoliday():
+	holidayFile = open("/home/RTalk/restapi/holiday.lst", "r")
+
+	while True:
+		holiday = holidayFile.readline().strip()
+		if not holiday:
+			break
+		holidayList.append(datetime.datetime.strptime(holiday, "%Y-%m-%d").date())
+
+	holidayFile.close()
+
+def isHoliday(date):
+	return date in holidayList
 
 def sendmail(receivers, topTalks):
 	plaintext = makeEmail(makeMessage(topTalks, "{0}, like {2}, dislike {3}, {1}"), "%s")
@@ -66,6 +82,35 @@ def getTemplate(filename):
 	with open(DIR + filename, "r") as f:
 		return f.read()
 
+def canSendmail():
+	today = datetime.datetime.today().weekday()
+
+	sendmailDayOfWeek = 4
+
+	if today > sendmailDayOfWeek:
+		return False
+
+	intervalDay = sendmailDayOfWeek - today
+
+	sendmailDate = date.today() + datetime.timedelta(days=intervalDay)
+
+	readHoliday()
+
+	while True:
+		if isHoliday(sendmailDate):
+			sendmailDate = sendmailDate - datetime.timedelta(days=1)
+			continue
+
+		break
+
+	dow = sendmailDate.weekday()
+
+	return today == dow
+
+if canSendmail() == False:
+	print "Not Today"
+	exit()
+
 receivers = []
 
 emaillist = open(DIR + "emaillist", "r")
@@ -85,6 +130,6 @@ if len(topTalks) > 0 and len(receivers) > 0:
 
 	for talk in topTalks:
 		print "Delete Talk : " + talk.key
-		rd.deleteTalk(talk.key)	
+		#rd.deleteTalk(talk.key)	
 else:
 	logger.writeLog("Send Mail : None")
