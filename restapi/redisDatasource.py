@@ -19,7 +19,7 @@ class RedisDataSource:
 	def setTalk(self, talkString):
 		key = str(uuid.uuid1())
 
-		talkStr = talkString.replace('\\', '\\\\').replace('"', '\\"').replace("'", "\\'")
+		talkStr = talkString.replace('\\', '\\\\').replace('"', '\\"')
 
 		talk = {'k':key,'t':talkStr,'wt':datetime.now().strftime('%y-%m-%d %H:%M:%S'),'l':'0','d':'0'}
 
