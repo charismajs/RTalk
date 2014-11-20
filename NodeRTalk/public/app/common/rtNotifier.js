@@ -11,22 +11,26 @@ angular.module('app').factory('rtNotifier', function (rtToastr) {
 
   return {
     info: function (msg) {
-      rtToastr.info(msg);
+//      rtToastr.info(msg);
+      alert(msg);
       console.log(msg);
     },
 
     success: function(msg) {
-      rtToastr.success(msg);
+//      rtToastr.success(msg);
+      alert(msg);
       console.log(msg);
     },
 
     error: function(msg) {
-      rtToastr.error(msg);
+//      rtToastr.error(msg);
+      alert(msg);
       console.log(msg);
     },
 
     warning: function(msg) {
-      rtToastr.warning(msg);
+//      rtToastr.warning(msg);
+      alert(msg);
       console.log(msg);
     }
   }
