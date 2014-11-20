@@ -16,9 +16,9 @@ class RTalk:
         return repr((self.key, self.talk, self.writetime, self.like, self.dislike, self.favorite))
 
     def toString(self):
-        talk = '{"k":"' + self.key + '","t":"' + self.talk + '","wt":"' + self.writetime.strftime('%y-%m-%d %H:%M:%S') + '","l":"' + str(self.like) + '","d":"' + str(self.dislike) + '"}'
-        return talk
-
+        #talk = '{"k":"' + self.key + '","t":"' + self.talk + '","wt":"' + self.writetime.strftime('%y-%m-%d %H:%M:%S') + '","l":"' + str(self.like) + '","d":"' + str(self.dislike) + '"}'
+		talk = '{"k":"' + self.key + '","t":"' + self.talk + '","wt":"' + self.writetime.strftime('%y-%m-%d, %a') + '","l":"' + str(self.like) + '","d":"' + str(self.dislike) + '"}'
+		return talk
 
 class RTalkList:
 	def __init__(self, rtalks):

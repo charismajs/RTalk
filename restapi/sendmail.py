@@ -19,7 +19,7 @@ logger = Logger(DIR + "sendmail.log")
 holidayList = []
 
 def readHoliday():
-	holidayFile = open("/home/RTalk/restapi/holiday.lst", "r")
+	holidayFile = open(DIR + "holiday.lst", "r")
 
 	while True:
 		holiday = holidayFile.readline().strip()
@@ -66,7 +66,7 @@ def makeMessage(talks, template):
 
 		for talk in talks:
 			t = template.replace("{0}", talk.talk)
-			t = t.replace("{1}", talk.writetime.strftime('%y-%m-%d %H:%M'))
+			t = t.replace("{1}", talk.writetime.strftime('%y-%m-%d, %a'))
 			t = t.replace("{2}", str(talk.like))
 			t = t.replace("{3}", str(talk.dislike))
 			talkmessages.append(t)
@@ -130,6 +130,6 @@ if len(topTalks) > 0 and len(receivers) > 0:
 
 	for talk in topTalks:
 		print "Delete Talk : " + talk.key
-		#rd.deleteTalk(talk.key)	
+		rd.deleteTalk(talk.key)	
 else:
 	logger.writeLog("Send Mail : None")
