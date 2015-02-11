@@ -13,7 +13,7 @@
           .input-group
             input.form-control(type='text', name='message', ng-model='msg', ng-minlength="1", ng-maxlength="1000", ng-keyup='form.message.$valid && $event.keyCode==13 && saveContents()', placeholder='하고 싶은 말을 자유롭게 작성해주세요~^^ (100자 이내)', ng-required="true", autofocus="true")
             span.input-group-btn
-              button.btn.btn-primary(type='button', ng-click='saveContents()') Go
+              button.btn.btn-primary.bold(type='button', ng-click='saveContents()') Go
         .panel.panel-success.w-100.topNMargin.topNColor(ng-repeat='top in contentsList.topn')
           table.table.topNColor
             tr
