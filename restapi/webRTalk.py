@@ -6,7 +6,7 @@ from logger import Logger
 
 app = Flask(__name__)
 rd = RedisDataSource()
-logger = Logger("/home/RTalk/restapi/webRTalk.log")
+logger = Logger("/Users/hoyoonlee/Documents/workspace/RTalk/restapi/webRTalk.log")
 
 def makeJson(arrayName, talks):
 	jsonTalks = []
@@ -38,6 +38,7 @@ def list(topn, listcount):
 		genTalks = rtalkList.getList(listcount)
 
 		return "{" + makeJson("topn", topTalks) + "," + makeJson("list", genTalks) + "}"
+		# return "{}"
 	except Exception as e:
 		logger.writeLog("error [def list] : %s" % e)
 		abort(500)
@@ -45,6 +46,7 @@ def list(topn, listcount):
 @app.route('/write', methods=['POST'])
 def write():
 	try:
+
 		if not request.json:
 			abort(400)
 

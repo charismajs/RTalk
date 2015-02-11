@@ -15,7 +15,7 @@ from email import Utils
 from email.header import Header
 import os
 
-DIR = "/home/RTalk/restapi/"
+DIR = "/Users/hoyoonlee/Documents/workspace/RTalk/restapi/"
 
 HOST = "122.199.153.32"
 PORT = 25

@@ -11,21 +11,23 @@ TITLE="WebRTalk RestAPI"
 case "$1" in
         start)
                 f_message "Starting ${TITLE}"
-				/usr/bin/python /home/RTalk/restapi/webRTalk.py $RTALK_MODE &
-				nohup /usr/local/bin/node /home/RTalk/NodeRTalk/server.js &
+				python /Users/hoyoonlee/Documents/workspace/RTalk/restapi/webRTalk.py $RTALK_MODE &
+				nohup node /Users/hoyoonlee/Documents/workspace/RTalk/NodeRTalk/server.js &
                 sleep 2
                 f_message "${TITLE} started"
                 ;;
         stop)
                 f_message "Stopping ${TITLE}"
-                pid=`ps aux | grep "/usr/bin/python /home/RTalk/restapi/webRTalk.py" | awk '{print $2}'`
+                pid=`ps aux | grep "python /Users/hoyoonlee/Documents/workspace/RTalk/restapi/webRTalk.py" | awk '{print $2}'`
                 if [[ $pid != "" ]]; then
                         kill -9 $pid
                 fi
-				pid=`ps aux | grep "/usr/local/bin/node /home/RTalk/NodeRTalk/server.js" | awk '{print $2}'`
-				if [[ $pid != "" ]]; then
-					kill -9 $pid
-				fi
+
+		pid=`ps aux | grep "node /Users/hoyoonlee/Documents/workspace/RTalk/NodeRTalk/server.js" | awk '{print $2}'`
+		if [[ $pid != "" ]]; then
+			kill -9 $pid
+		fi
+
                 f_message "${TITLE} stopped"
                 ;;
         *)

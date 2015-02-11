@@ -17,6 +17,13 @@ angular.module('app').service('rtModelApi', function(rtContentsList, rtWriteCont
 
   var write = function(message, next) {
     console.log('-- start to write a talk in write function');
+    message = message.autoLink({
+
+      // callback: function(url) {
+      //   return /\.(gif|png|jpe?g)$/i.test(url) ? '<br><img src="' + url + '">' : null;
+      // },
+      target: "_blank"
+    });
     rtWriteContents.save(
       {
         talk: message

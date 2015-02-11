@@ -2,41 +2,48 @@
    Created by LuckyJS on 2014. 8. 28..
 .container
   form(name='form')
-    .panel.panel-primary
-      .panel-heading
-        h1.panel-title.rtalk-xx-large RTalk
-          small.panel-sub-title.rtalk-small   anonymous bulletin
+    .panel.panel-primary.panelBorder
+      .panel-heading.headerColor
+        h1.panel-title.rtalk-xx-large R TALK
+          small.panel-sub-title.rtalk-medium &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;anonymous bulletin
           span.glyphicon.glyphicon-refresh.pull-right.clickable.v-m(ng-click='getListOnTime()', title='Refresh list right now!!!')
-          timer.panel-title-info.pull-right.v-t.rtalk-medium(countdown="1", interval="1000", finish-callback='getListOnTime()') Update in {{countdown}}s.&nbsp;&nbsp;&nbsp;
+          timer.panel-title-info.pull-right.v-t.rtalk-medium(countdown="1", interval="1000", finish-callback='getListOnTime()') Update in&nbsp;{{countdown}}s.&nbsp;&nbsp;&nbsp;
       .panel-body
         .panel
           .input-group
-            input.form-control(type='text', name='message', ng-model='msg', ng-minlength="1", ng-maxlength="100", ng-keyup='form.message.$valid && $event.keyCode==13 && saveContents()', placeholder='하고 싶은 말을 자유롭게 작성해주세요~^^ (100자 이내)', ng-required="true", autofocus="true")
+            input.form-control(type='text', name='message', ng-model='msg', ng-minlength="1", ng-maxlength="1000", ng-keyup='form.message.$valid && $event.keyCode==13 && saveContents()', placeholder='하고 싶은 말을 자유롭게 작성해주세요~^^ (100자 이내)', ng-required="true", autofocus="true")
             span.input-group-btn
-              button.btn.btn-primary(type='button', ng-click='saveContents()') 전송
-        .panel.panel-success.w-100.topNMargin(ng-repeat='top in contentsList.topn')
+              button.btn.btn-primary.bold(type='button', ng-click='saveContents()') Go
+        .panel.panel-success.w-100.topNMargin.topNColor(ng-repeat='top in contentsList.topn')
           table.table.topNColor
             tr
               td
-                span.rtalk-large.contentsWordBreak {{top.t}}
+                .partial-view-content(id="top_{{$index}}" ng-bind-html="top.t")
                 br
-                span.rtalk-small {{top.wt}}
-              td.w-15.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='likeContents(top)')
-                span.glyphicon.glyphicon-thumbs-up &nbsp;
-                span.badge.rtalk-large {{top.l}}
-              td.w-15.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='dislikeContents(top)')
-                span.glyphicon.glyphicon-thumbs-down &nbsp;
-                span.badge.rtalk-large {{top.d}}
-        .panel.panel-info.w-100
-          table.table.table-striped
-            tr(ng-repeat='contents in contentsList.list')
+                .no-margin
+                  span.rtalk-small 20{{top.wt}}&nbsp;&nbsp;
+                  a.more-part(id="top_more_{{$index}}" href="#" ng-click="expandTop($index)") more &raquo;
+              td.w-70px.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='likeContents(top)')
+                span.glyphicon.glyphicon-thumbs-up.thumbs-margin
+                span.badge.thumbs-back.rtalk-large {{top.l}}
+              td.w-70px.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='dislikeContents(top)')
+                span.glyphicon.glyphicon-thumbs-down.thumbs-margin
+                span.badge.thumbs-back.rtalk-large {{top.d}}
+        .panel.panel-info.w-100.contentBorder
+          table.table
+            tr(ng-repeat='contents in contentsList.list' my-repeat-directive) 
               td
-                span.rtalk-large.contentsWordBreak {{contents.t}}
+                .partial-view-content(id="content_{{$index}}" ng-bind-html="contents.t")
                 br
-                span.rtalk-small {{contents.wt}}
-              td.w-15.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='likeContents(contents)')
-                span.glyphicon.glyphicon-thumbs-up &nbsp;
-                span.badge.rtalk-large {{contents.l}}
-              td.w-15.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='dislikeContents(contents)')
-                span.glyphicon.glyphicon-thumbs-down &nbsp;
-                span.badge.rtalk-large {{contents.d}}
+                .no-margin
+                  span.rtalk-small 20{{contents.wt}}&nbsp;&nbsp;
+                  a.more-part(id="content_more_{{$index}}" href="#" ng-click="expandContent($index)") more &raquo;
+              td.w-70px.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='likeContents(contents)')
+                span.glyphicon.glyphicon-thumbs-up.thumbs-margin
+                span.badge.thumbs-back.rtalk-large {{contents.l}}
+              td.w-70px.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='dislikeContents(contents)')
+                span.glyphicon.glyphicon-thumbs-down.thumbs-margin
+                span.badge.thumbs-back.rtalk-large {{contents.d}}
+          div(ng-init="afterRepeatEvent()" height-adjust)
+
+  

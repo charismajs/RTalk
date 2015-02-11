@@ -1,0 +1,42 @@
+//
+   Created by LuckyJS on 2014. 8. 28..
+.container
+  form(name='form')
+    .panel.panel-primary
+      .panel-heading
+        h1.panel-title.rtalk-xx-large RTalk (Test Hoyoon)
+          small.panel-sub-title.rtalk-small   anonymous bulletin
+          span.glyphicon.glyphicon-refresh.pull-right.clickable.v-m(ng-click='getListOnTime()', title='Refresh list right now!!!')
+          timer.panel-title-info.pull-right.v-t.rtalk-medium(countdown="1", interval="1000", finish-callback='getListOnTime()') Update in {{countdown}}s.&nbsp;&nbsp;&nbsp;
+      .panel-body
+        .panel
+          .input-group
+            input.form-control(type='text', name='message', ng-model='msg', ng-minlength="1", ng-maxlength="100", ng-keyup='form.message.$valid && $event.keyCode==13 && saveContents()', placeholder='하고 싶은 말을 자유롭게 작성해주세요~^^ (1자 이내)', ng-required="true", autofocus="true")
+            span.input-group-btn
+              button.btn.btn-primary(type='button', ng-click='saveContents()') 전송
+        .panel.panel-success.w-100.topNMargin(ng-repeat='top in contentsList.topn')
+          table.table.topNColor
+            tr
+              td
+                span.rtalk-large.contentsWordBreak {{top.t}}
+                br
+                span.rtalk-small {{top.wt}}
+              td.w-15.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='likeContents(top)')
+                span.glyphicon.glyphicon-thumbs-up &nbsp;
+                span.badge.rtalk-large {{top.l}}
+              td.w-15.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='dislikeContents(top)')
+                span.glyphicon.glyphicon-thumbs-down &nbsp;
+                span.badge.rtalk-large {{top.d}}
+        .panel.panel-info.w-100
+          table.table.table-striped
+            tr(ng-repeat='contents in contentsList.list')
+              td
+                span.rtalk-large.contentsWordBreak {{contents.t}}
+                br
+                span.rtalk-small {{contents.wt}}
+              td.w-15.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='likeContents(contents)')
+                span.glyphicon.glyphicon-thumbs-up &nbsp;
+                span.badge.rtalk-large {{contents.l}}
+              td.w-15.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='dislikeContents(contents)')
+                span.glyphicon.glyphicon-thumbs-down &nbsp;
+                span.badge.rtalk-large {{contents.d}}
