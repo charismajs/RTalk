@@ -34,11 +34,36 @@ table thead tr th
   color #fff
   background-color #484
 
-.panel-sub-title
-  color inherit
+.panel-heading
+  position:relative
+
+.panel-title .rt_logo
+  width:100px
+  height:50px
+
+.panel-title .glyphicon-refresh
+  position:absolute
+  top:50%
+  right:15px
+  margin-top:-16px
+  font-size:xx-large
 
 .panel-title-info
-  font-weight normal !important
+  position:absolute
+  right:42px
+  top:50%
+  margin-top:-9px
+  font-weight: normal !important
+  font-family:Helvetica
+  font-size:medium
+
+.panel-sub-title
+  color: inherit
+  font-size:medium
+  font-family:Helvetica
+  vertical-align:bottom
+  margin-left:10px
+
 
 .font-7
   font-size 7px
@@ -122,4 +147,41 @@ img
   background-color #578b91
 
 .bold
-  font-weight: bold;
+  font-weight: bold
+
+.btn-likeContents
+  position:absolute
+  right:70px
+  bottom:7px
+  padding:0
+
+.btn-dislikeContents
+  position:absolute
+  right:0
+  bottom:7px
+  margin-top:-12px
+  padding:0
+
+.form-control
+  -webkit-appearance:none
+
+.table td
+  position:relative
+
+@media screen and (max-width:600px)
+  .panel-title
+    font-size:initial !important
+
+  .panel-title .rt_logo
+    width:60px
+    height:30px
+
+  .panel-sub-title
+    display:block
+    font-size:small
+    margin-left:0
+
+  .panel-title-info
+    font-size:small
+    margin-top:-7px
+
