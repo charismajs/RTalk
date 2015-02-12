@@ -8,7 +8,7 @@
           img.rt_logo(alt='R Talk',src='./../../image/rt.png')
           small.panel-sub-title anonymous bulletin
           span.glyphicon.glyphicon-refresh.pull-right.clickable.v-m(ng-click='getListOnTime()', title='Refresh list right now!!!')
-          timer.panel-title-info.pull-right.v-t.rtalk-medium(countdown="1", interval="1000", finish-callback='getListOnTime()') Update in&nbsp;{{countdown}}s.&nbsp;&nbsp;&nbsp;
+          timer.panel-title-info.pull-right.v-t(countdown="1", interval="1000", finish-callback='getListOnTime()') Update in&nbsp;{{countdown}}s.&nbsp;&nbsp;&nbsp;
       .panel-body
         .panel
           .input-group

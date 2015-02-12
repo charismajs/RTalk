@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="37aa936c-8bfa-4cec-b3f9-ead8a69e1658" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" afterPath="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webservice.sh" afterPath="$PROJECT_DIR$/webservice.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RTalk.iws" />
@@ -27,21 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.jade" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-              <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.3664495" vertical-offset="0" max-vertical-offset="840">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webservice.sh" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="webservice.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webservice.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47916666" vertical-offset="93" max-vertical-offset="660">
-              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="660">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -125,8 +124,8 @@
         <option value="$PROJECT_DIR$/NodeRTalk/public/app/common/rtNotifier.js" />
         <option value="$PROJECT_DIR$/NodeRTalk/server/includes/scripts.jade" />
         <option value="$PROJECT_DIR$/NodeRTalk/public/css/site.styl" />
-        <option value="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" />
         <option value="$PROJECT_DIR$/webservice.sh" />
+        <option value="$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade" />
       </list>
     </option>
   </component>
@@ -828,7 +827,11 @@
       <created>1423720816745</created>
       <updated>1423720816745</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="modify a path in webservice.sh">
+      <created>1423721502992</created>
+      <updated>1423721502993</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -846,8 +849,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30875203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32452276" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30875203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32452276" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -871,7 +874,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="add favicon&#10;" />
     <MESSAGE value="update Flask Server&#10;add scripts about Node Server to webservice.sh" />
     <MESSAGE value="modify about UI &#10; - bigger font&#10; - add color&#10;" />
     <MESSAGE value="modify viewport about contents width" />
@@ -896,7 +898,8 @@
     <MESSAGE value="add autolink-js&#10;" />
     <MESSAGE value="add style (bold) in 'go' button" />
     <MESSAGE value="modify style" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify style" />
+    <MESSAGE value="modify a path in webservice.sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify a path in webservice.sh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1257,18 +1260,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
+    <entry file="file://$PROJECT_DIR$/webservice.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="660">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webservice.sh">
+    <entry file="file://$PROJECT_DIR$/NodeRTalk/public/app/main/main.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47916666" vertical-offset="93" max-vertical-offset="660">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.3664495" vertical-offset="0" max-vertical-offset="840">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
