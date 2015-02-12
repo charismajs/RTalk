@@ -6,7 +6,7 @@
       .panel-heading.headerColor
         h1.panel-title.rtalk-xx-large
           img.rt_logo(alt='R Talk',src='./../../image/rt.png')
-          small.panel-sub-title.rtalk-medium anonymous bulletin
+          small.panel-sub-title anonymous bulletin
           span.glyphicon.glyphicon-refresh.pull-right.clickable.v-m(ng-click='getListOnTime()', title='Refresh list right now!!!')
           timer.panel-title-info.pull-right.v-t.rtalk-medium(countdown="1", interval="1000", finish-callback='getListOnTime()') Update in&nbsp;{{countdown}}s.&nbsp;&nbsp;&nbsp;
       .panel-body
@@ -25,11 +25,11 @@
                   span.rtalk-small 20{{top.wt}}&nbsp;&nbsp;
                   a.more-part(id="top_more_{{$index}}" href="#" ng-click="expandTop($index)") more &raquo;
                 .btn-likeContents.w-70px.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='likeContents(top)')
-                span.glyphicon.glyphicon-thumbs-up.thumbs-margin
-                span.badge.thumbs-back.rtalk-large {{top.l}}
+                  span.glyphicon.glyphicon-thumbs-up.thumbs-margin
+                  span.badge.thumbs-back.rtalk-large {{top.l}}
                 .btn-dislikeContents.w-70px.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='dislikeContents(top)')
-                span.glyphicon.glyphicon-thumbs-down.thumbs-margin
-                span.badge.thumbs-back.rtalk-large {{top.d}}
+                  span.glyphicon.glyphicon-thumbs-down.thumbs-margin
+                  span.badge.thumbs-back.rtalk-large {{top.d}}
         .panel.panel-info.w-100.contentBorder
           table.table
             tr(ng-repeat='contents in contentsList.list' my-repeat-directive) 
@@ -40,11 +40,11 @@
                   span.rtalk-small 20{{contents.wt}}&nbsp;&nbsp;
                   a.more-part(id="content_more_{{$index}}" href="#" ng-click="expandContent($index)") more &raquo;
                 .btn-likeContents.w-70px.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='likeContents(contents)')
-                span.glyphicon.glyphicon-thumbs-up.thumbs-margin
-                span.badge.thumbs-back.rtalk-large {{contents.l}}
+                  span.glyphicon.glyphicon-thumbs-up.thumbs-margin
+                  span.badge.thumbs-back.rtalk-large {{contents.l}}
                 .btn-dislikeContents.w-70px.col-md-2.col-xs-2.v-m.clickable.text-center(ng-click='dislikeContents(contents)')
-                span.glyphicon.glyphicon-thumbs-down.thumbs-margin
-                span.badge.thumbs-back.rtalk-large {{contents.d}}
+                  span.glyphicon.glyphicon-thumbs-down.thumbs-margin
+                  span.badge.thumbs-back.rtalk-large {{contents.d}}
           div(ng-init="afterRepeatEvent()" height-adjust)
 
   
