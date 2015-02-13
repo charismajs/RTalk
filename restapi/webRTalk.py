@@ -6,7 +6,7 @@ from logger import Logger
 
 app = Flask(__name__)
 rd = RedisDataSource()
-logger = Logger("/Users/hoyoonlee/Documents/workspace/RTalk/restapi/webRTalk.log")
+logger = Logger("/home/RTalk/restapi/webRTalk.log")
 
 def makeJson(arrayName, talks):
 	jsonTalks = []

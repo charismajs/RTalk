@@ -8,7 +8,7 @@ from logger import Logger
 import mailsender
 import datetime
 
-DIR = "/Users/hoyoonlee/Documents/workspace/RTalk/restapi/"
+DIR = "/home/RTalk/restapi/"
 
 FROM = "RDPart@ubware.com"
 SUBJECT = "Weekly R&D Talk TOP 3"
